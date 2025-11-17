@@ -1,0 +1,112 @@
+<template>
+  <div class="oneblade-page">
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="logo">OneBlade</div>
+    </header>
+
+    <!-- Main content -->
+    <main class="content">
+      <video
+        class="hero-video"
+        :src="videoSrc"
+        controls
+        autoplay
+        muted
+        loop
+      ></video>
+      <a :href="videoSrc" download class="download-btn">
+        Download Video
+      </a>
+      <a>All content on this website is not real, and is meant for a fun project in school. This website will be taken down after date of grading by our teacher.</a>
+      <a>Gruppe: Adwaith - Im video, Tanish - Videofilmer und Editor 1, Tyler - Logo Designer, programmierer, Editor 2</a>
+    </main>
+  </div>
+</template>
+
+<script>
+import demoVideo from '../assets/demo.mp4'
+
+export default {
+  name: "OneBlade",
+  data() {
+    return {
+      videoSrc: demoVideo
+    }
+  }
+};
+</script>
+
+<style scoped>
+/* Full page with a professional grid background */
+.oneblade-page {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  background: repeating-linear-gradient(
+    45deg,
+    #1e1e2f,
+    #1e1e2f 20px,
+    #27273f 20px,
+    #27273f 40px
+  );
+  color: #ffffff;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.navbar .logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+/* Main content */
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* Video styling */
+.hero-video {
+  max-width: 80%;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+  transition: transform 0.3s ease;
+}
+
+.hero-video:hover {
+  transform: scale(1.05);
+}
+
+/* Download button */
+.download-btn {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(90deg, #42b883, #1e90ff);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.download-btn:hover {
+  background: linear-gradient(90deg, #1e90ff, #42b883);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+</style>
